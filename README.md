@@ -20,13 +20,11 @@ is exactly the same as this one:
           . . .
           . . .
 
-Then the code is run like a 2-dimensional language, except that the IP (instruction pointer) wraps around like the code is on a cube.
+Then the code is run like a 2-dimensional language, except that the IP (instruction pointer) wraps around as if the code were on a cube.
 
 ## Commands
 
 Unless specified otherwise (with "pop" or "in place"), operators do not remove their operands from the stack.
-
-\* designates not implemented yet.
 
 ### I/O
 
@@ -60,7 +58,9 @@ Unless specified otherwise (with "pop" or "in place"), operators do not remove t
 - `s` - swap the top two items. `[... 1 2] => [... 2 1]`
 - `r` - rotate the top three items. `[... 0 1 2] => [... 2 0 1]`
 - `q` - send the top item to the bottom.
+- `p` - bring the bottom item to the top.
 - `t` - pop X, bring the Xth item to the top.
+- `B` - reverse the stack.
 
 ### Literals
 
@@ -119,7 +119,7 @@ Obviously no input is needed. Net form:
 
     %@\?I:u;>O/)((./0\)?/
 
-Input is just the number to test. Net form:
+Input is the number to test. Net form:
     
         % @
         \ ?
