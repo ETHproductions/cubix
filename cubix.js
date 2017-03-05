@@ -244,6 +244,7 @@ var Cubix = {
 			else if (char === "a") stack.push((stack[stack.length-2]||0)&(stack[stack.length-1]||0));
 			else if (char === "b") stack.push((stack[stack.length-2]||0)|(stack[stack.length-1]||0));
 			else if (char === "c") stack.push((stack[stack.length-2]||0)^(stack[stack.length-1]||0));
+			else if (char === "P") stack.push(Math.pow(stack[stack.length-2]||0,stack[stack.length-1]||0));
 
 			else if (char === "(") stack.push((stack.pop()||0)-1);
 			else if (char === ")") stack.push((stack.pop()||0)+1);

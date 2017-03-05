@@ -41,6 +41,7 @@ Unless specified otherwise (with "pop" or "in place"), operators do not remove t
 - `+` - add the top two items.
 - `-` - subtract the top two items.
 - `*` - multiply the top two items.
+- `P` - push the top item to the (second item)th power.
 - `,` - integer divide the top two items, rounding toward negative infinity.
 - `%` - take modulo of the top two items.
 - `&` - pop two integers, concatenate their digits, and push the result as an int.
