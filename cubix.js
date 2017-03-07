@@ -211,7 +211,7 @@ var Cubix = {
 			else if (char === "o") { if(stack[stack.length-1] >= 0) output(String.fromCharCode(stack[stack.length-1])); }
 			else if (char === "O") output(stack[stack.length-1] || 0);
 			else if (char === "i") stack.push(input ? input.charCodeAt(0): -1), input = input.slice(1);
-			else if (char === "A") { stack.push(-1); for (var i = input.length; i-- > 0; ) stack.push(input.charCodeAt(i)); input = ""; }
+			else if (char === "A") { stack.push(-1); for (var i = input.length; i--; ) stack.push(input.charCodeAt(i)); input = ""; }
 			else if (char === "I") stack.push(+(input.match(/-?\d+/)||[0])[0] || 0), input = input.replace(/^.*?\d+/,"");
 
 			else if (char === ">") ip.d = 0;
@@ -235,6 +235,7 @@ var Cubix = {
 
 			else if (char === "?") ip.d = (ip.d + (stack[stack.length-1] < 0 ? 3 : stack[stack.length-1] > 0 ? 1 : 0)) % 4;
 			else if (char === "!") { if (stack.length && stack[stack.length-1]) state = "skip"; }
+			else if (char === "=") stack.push((stack[stack.length-1]||0)>(stack[stack.length-2]||0)?1:(stack[stack.length-1]||0)==(stack[stack.length-2]||0)?0:-1)
 
 			else if (char === "+") stack.push((stack[stack.length-2]||0)+(stack[stack.length-1]||0));
 			else if (char === "-") stack.push((stack[stack.length-2]||0)-(stack[stack.length-1]||0));
