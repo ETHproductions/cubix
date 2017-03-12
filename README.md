@@ -62,6 +62,7 @@ Unless specified otherwise (with "pop" or "in place"), operators do not remove t
 - `p` - bring the bottom item to the top.
 - `t` - pop X, bring the Xth item to the top.
 - `B` - reverse the stack.
+- `=` - compare the top two items on the stack, and push 1 if the top item is greater than the second item, 0 if they are equal, and -1 otherwise.
 
 ### Literals
 
